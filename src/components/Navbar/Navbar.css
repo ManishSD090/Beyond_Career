@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: transparent;
+    margin-top: 20px;
+    margin-left: 40px;
+    border-radius: 50px;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-out;
+}
+
+nav:hover{
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+.nav_main{
+    display: flex;
+    width: 100%;
+    height: 90px;
+    gap: 35em;
+    justify-content: center;
+}
+
+.main_logo img{
+    width: 130px;
+    height: auto;
+    margin-top: -20px;
+    margin-left: 25px;
+}
+
+.links{
+    margin-top: 29px;
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+.links a{
+    text-decoration: none;
+    color: black;
+    margin-left: 25px;
+}
+
+.links a:hover{
+    color: rgb(131, 196, 61);
+}
+
+.links button{
+    background: black;
+    border-radius: 34px;
+    font-size: 15px;
+    color: aliceblue;
+    cursor: pointer;
+    width: 84px;
+    height: 34px;
+    border: none;
+}
+
+.links button:hover{
+    background: rgb(131, 196, 61);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 9px;
+    margin-right: 20px;
+    z-index: 20;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.rotate1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.fade {
+    opacity: 0;
+}
+
+.rotate2 {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+@media (max-width: 768px) {
+    .nav_main {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 32px;
+        height: 55px;
+        width: 350px;
+        margin-left:-14px;
+    }
+
+    .main_logo img{
+        width: 76px;
+        height: auto;
+        margin-top: 2px;
+    }
+    .hamburger {
+        display: flex;
+    }
+
+    .links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background: rgb(241, 241, 241);
+        padding: 20px;
+        z-index: 5;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .links.open {
+        display: flex;
+    }
+
+    .links a, .links button {
+        margin: 10px 0;
+        margin-left: 0;
+    }
+}
